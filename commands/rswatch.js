@@ -8,7 +8,7 @@ module.exports = {
         const res = await fetch('https://sitwatch.net/api/videos/latest?page=1&limit=1');
         const json = await res.json();
 
-        const videoId = json[0].id;
+        const videoId = Math.floor(Math.random() * json[0].id) + 1;
         const videoUrl = `https://sitwatch.net/watch/${videoId}`;
         
         const embed = new EmbedBuilder()
