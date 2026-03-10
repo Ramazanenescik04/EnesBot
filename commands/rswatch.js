@@ -5,15 +5,17 @@ module.exports = {
         .setName('rswatch')
         .setDescription('SitWatchdaki Videolardan Birini Rasgere Açar'),
     async execute(interaction) {
-        const json = (await fetch('https://sitwatch.net/api/videos/latest?page=1&limit=1')).json();
-        //const videoId = json[0].id;
+        const res = await fetch('https://sitwatch.net/api/videos/latest?page=1&limit=1');
+        const json = await res.json();
 
-       //const videoUrl = `https://sitwatch.net/watch/${videoId}`;
+        const videoId = json[0].id;
+        const videoUrl = `https://sitwatch.net/watch/${videoId}`;
+        
         const embed = new EmbedBuilder()
             .setTitle('Rasgere Watch')
             .setDescription('Rasgere Watch, SitWatchdaki Videolardan Birini Rasgere Açar.')
             .addFields(
-                { name: 'Value', value: JSON.stringify(json, null, 2) },
+                { name: 'Value', value: videoUrl },
             )
             .setColor('#5865F2')
             .setTimestamp()
