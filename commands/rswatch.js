@@ -6,9 +6,9 @@ module.exports = {
         .setDescription('SitWatchdaki Videolardan Birini Rasgere Açar'),
     async execute(interaction) {
         const json = (await fetch('https://sitwatch.net/api/videos/latest?page=1&limit=1')).json();
-        const videoId = json[0].watch_id;
+        //const videoId = json[0].id;
 
-        const videoUrl = `https://sitwatch.net/watch/${videoId}`;
+       //const videoUrl = `https://sitwatch.net/watch/${videoId}`;
         const embed = new EmbedBuilder()
             .setTitle('Rasgere Watch')
             .setDescription('Rasgere Watch, SitWatchdaki Videolardan Birini Rasgere Açar.')
