@@ -6,7 +6,7 @@ module.exports = {
         .setDescription('Bot hakkında bilgi verir'),
     
     async execute(interaction) {
-        const version = '1.0.0'; // Botun versiyonunu buraya yazın
+        const version = '2.0.0'; // Botun versiyonunu buraya yazın
         if (process.env.VERSION) {
             version = process.env.VERSION; // Eğer .env dosyasında tanımlıysa onu kullan
         }
@@ -16,7 +16,7 @@ module.exports = {
         .addFields(
             { name: 'Yapımcı', value: 'Ramazanenescik04', inline: true },
             { name: 'Versiyon', value: version, inline: true },
-            { name: 'GitHub', value: 'https://github.com/Ramazanenesisik010/EnesBot', inline: true}
+            { name: 'GitHub', value: 'https://github.com/Ramazanenescik04/EnesBot', inline: true}
         )
         .setColor('#5865F2')
         .setTimestamp();
